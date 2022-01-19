@@ -14,7 +14,7 @@
         <section class="navigation">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Student Name</a>
+                  <a class="navbar-brand" href="{{ url_for('index') }}">Travers Geoffray</a>
                   <button class="toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                   </button>
@@ -24,10 +24,10 @@
                         <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="{{ url_for('index') }}#skills">Skills</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,10 +41,10 @@
                         </ul>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="{{ url_for('index') }}#contact">Contact</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Add Project</a>
+                        <a class="nav-link" href="{{ url_for('create') }}">Add Project</a>
                       </li>
                     </ul>
                   </div>
@@ -52,58 +52,37 @@
             </nav>
         </section>
         <section class="header">
-            <h1>Your Name</h1>
-            <p>Your current goal. (Job, freelance, etc)</p>
+            <h1>Travers Geoffray</h1>
+            <p>Seeking a job as Python Developer</p>
             <!--I would suggest choosing a different picture here.-->
             <!--Like maybe a hobby photo-->
-            <img src="https://cdn.pixabay.com/photo/2020/09/04/12/32/kayak-5543935_1280.jpg" alt="Headshot of myself">
+            <img src="/images/TraversJazzfest.jpeg" alt="Headshot of myself">
         </section>
         <section id="about-page">
             <div id="triangle7"></div>
             <div id="triangle8"></div>
-            <h2>Section Title</h2>
+            <h2>From Piano to Programming</h2>
             <p>
-                Soufflé cupcake cupcake. 
-                Brownie chocolate cake gingerbread candy carrot cake sesame snaps cookie cake. 
-                Bear claw pastry candy canes tart cookie caramels cotton candy caramels sweet roll. 
-                Bonbon tootsie roll gummi bears sugar plum pie croissant. 
-                Muffin sweet roll bonbon. 
-                Carrot cake gummies cheesecake. 
-                Gummi bears powder apple pie. 
-                Topping cake powder. 
-                Pastry chupa chups caramels.
+               Until recently, my primary languages have been English and music.
+               I started studying classical piano at the age of five. As I got older,
+               I transitioned into jazz piano until I moved to New Orleans to master 
+               the stylings of Dr. John and James Booker. 
             </p>
             <p>
-                Soufflé cupcake cupcake. 
-                Brownie chocolate cake gingerbread candy carrot cake sesame snaps cookie cake. 
-                Bear claw pastry candy canes tart cookie caramels cotton candy caramels sweet roll. 
-                Bonbon tootsie roll gummi bears sugar plum pie croissant. 
-                Muffin sweet roll bonbon. 
-                Carrot cake gummies cheesecake. 
-                Gummi bears powder apple pie. 
-                Topping cake powder. 
-                Pastry chupa chups caramels.
+              Between performing and being on the road, I found that I wanted to exercise
+              my brain in my downtime (and make a little extra money too). A friend in music
+              introduced to the world of web design and programming and I have been hooked ever since.
+              I started my journey with HTML, CSS, and Javascript, and now continuing the challenge
+              of exploring backend with Python.
             </p>
-            <a href="#"><i class="far fa-file"></i>Resume</a>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vTL-IyBzPwmFAr4N9TTsb4uW1tC5ESLHT_MSKxHO6cBk3HoyQHhoQ7Ts3y2RGaKniAaxPNugzHzGELL/pub"><i class="far fa-file"></i>Resume</a>
         </section>
         <section class="footer">
             <div class="socials">
                 <!--Delete any you don't use-->
                 <!--Icons from FontAwesome.com/icons-->
-                <a href="">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="">
+                <a href="https://github.com/Traversg">
                     <i class="fab fa-github"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="">
-                    <i class="fab fa-tiktok"></i>
                 </a>
             </div>
             <div class="treehouse">

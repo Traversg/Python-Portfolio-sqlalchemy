@@ -59,6 +59,12 @@ def delete(id):
     db.session.commit()
     return render_template('index.html', project=project)
 
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True, port=8000, host='127.0.0.1')
