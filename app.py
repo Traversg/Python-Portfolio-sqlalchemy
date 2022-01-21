@@ -1,8 +1,8 @@
 import re
 from flask import (render_template, redirect,
-                    url_for, request)
-from models import db, Project, app  
-import datetime   
+                   url_for, request)
+from models import db, Project, app
+import datetime
 
 
 def str_to_datetime(str):
@@ -19,13 +19,12 @@ def index():
 @app.route('/projects/new', methods=['GET', 'POST'])
 def create():
     if request.form:
-        # string_date = request.form['date']
-        # date_as_datetime = datetime.datetime.strptime(string_date, '%Y-%m')
         new_project = Project(project_title=request.form['title'],
-                            completion_date=str_to_datetime(request.form['date']),
-                            description=request.form['desc'],
-                            skills=request.form['skills'],
-                            url=request.form['github'])
+                              completion_date=str_to_datetime(
+                                  request.form['date']),
+                              description=request.form['desc'],
+                              skills=request.form['skills'],
+                              url=request.form['github'])
         db.session.add(new_project)
         db.session.commit()
         return redirect(url_for('index'))
@@ -34,13 +33,13 @@ def create():
 
 @app.route('/projects/<id>')
 def detail(id):
-    project = Project.query.get(id)
+    project = Project.query.get_or_404(id)
     return render_template('detail.html', project=project)
 
 
 @app.route('/projects/<id>/edit', methods=['GET', 'POST'])
 def edit(id):
-    project = Project.query.get(id)
+    project = Project.query.get_or_404(id)
     if request.form:
         project.project_title = request.form['title']
         project.completion_date = str_to_datetime(request.form['date'])
@@ -54,15 +53,20 @@ def edit(id):
 
 @app.route('/projects/<id>/delete')
 def delete(id):
-    project = Project.query.get(id)
+    project = Project.query.get_or_404(id)
     db.session.delete(project)
     db.session.commit()
-    return render_template('index.html', project=project)
+    return redirect(url_for('index'))
 
 
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', msg=error), 404
 
 
 if __name__ == '__main__':

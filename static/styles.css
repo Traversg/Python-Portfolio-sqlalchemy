@@ -552,6 +552,19 @@ EXCEEDS - About Page
 }
 
 /*******
+404 Page
+*******/
+
+#not-found {
+    margin: 50px;
+    text-align: center;
+}
+
+#not-found p{
+    margin: 25px 200px;
+}
+
+/*******
 Media Queries
 *******/
 
