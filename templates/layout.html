@@ -34,10 +34,9 @@
                           Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="{{ url_for('index') }}#project1">Project 1</a></li>
-                          <li><a class="dropdown-item" href="{{ url_for('index') }}#project2">Project 2</a></li>
-                          <li><a class="dropdown-item" href="{{ url_for('index') }}#project3">Project 3</a></li>
-                          <li><a class="dropdown-item" href="{{ url_for('index') }}#project4">Project 4</a></li>
+                          {% for project in projects %}
+                          <li><a class="dropdown-item" href="{{ url_for('index') }}#project{{ project.id }}">{{ project.project_title }}</a></li>
+                          {% endfor %}
                         </ul>
                       </li>
                       <li class="nav-item">
